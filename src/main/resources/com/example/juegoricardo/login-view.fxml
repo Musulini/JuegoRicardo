@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/Login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Registrar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="22.0" layoutY="22.0" prefHeight="17.0" prefWidth="47.0" text="nombre" />
+                        <TextField layoutX="106.0" layoutY="49.0" />
+                        <Label layoutX="20.0" layoutY="84.0" prefHeight="17.0" prefWidth="71.0" text="apellido P" />
+                        <TextField layoutX="106.0" layoutY="17.0" />
+                        <Label layoutX="20.0" layoutY="53.0" prefHeight="17.0" prefWidth="59.0" text="apellido M" />
+                        <TextField layoutX="106.0" layoutY="80.0" />
+                        <PasswordField layoutX="106.0" layoutY="114.0" />
+                        <Label layoutX="20.0" layoutY="118.0" prefHeight="17.0" prefWidth="71.0" text="pass" />
+                        <PasswordField layoutX="106.0" layoutY="154.0" />
+                        <Label layoutX="20.0" layoutY="158.0" prefHeight="17.0" prefWidth="71.0" text="confirm pass" />
+                        <Label layoutX="300.0" layoutY="22.0" prefHeight="17.0" prefWidth="71.0" text="email" />
+                        <TextField layoutX="386.0" layoutY="18.0" />
+                        <Label layoutX="292.0" layoutY="84.0" prefHeight="17.0" prefWidth="71.0" text="username" />
+                        <TextField layoutX="378.0" layoutY="80.0" />
+                        <Button layoutX="319.0" layoutY="154.0" mnemonicParsing="false" text="submit" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Iniciar Sesion ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchorpane_start">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="600.0" text="Richard's  Game" />
+                        <Label layoutY="68.0" prefHeight="17.0" prefWidth="600.0" text="INPUT:  USUARIO + CONTRASEÑA " />
+                        <Pane layoutY="130.0" prefHeight="51.0" prefWidth="600.0">
+                           <children>
+                              <TextField layoutY="14.0" prefHeight="25.0" prefWidth="300.0" text="USER: " />
+                              <PasswordField layoutX="300.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" text="password" />
+                           </children>
+                        </Pane>
+                        <Button layoutX="70.0" layoutY="214.0" mnemonicParsing="false" text="lito" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</StackPane>

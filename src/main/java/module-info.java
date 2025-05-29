@@ -8,7 +8,9 @@ module com.example.juegoricardo {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires eu.hansolo.tilesfx;
+	requires java.sql;
+	requires jdk.jdi;
 
-    opens com.example.juegoricardo to javafx.fxml;
+	opens com.example.juegoricardo to javafx.fxml;
     exports com.example.juegoricardo;
 }

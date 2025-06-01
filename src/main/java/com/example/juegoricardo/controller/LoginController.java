@@ -1,6 +1,7 @@
 package com.example.juegoricardo.controller;
 
 import com.example.juegoricardo.ConnectorDAO;
+import com.example.juegoricardo.GameApp;
 import com.example.juegoricardo.JuegoApp;
 import com.example.juegoricardo.SQLConnection;
 import com.example.juegoricardo.model.User;
@@ -80,19 +81,24 @@ public class LoginController {
 		}
 	}
 
-	private void signInUser() throws IOException {
+	private void signInUser() throws IOException, SQLException {
 		String[] data = connector.getLoggedUser(logUser.getText());
 		if (data[0] != null) {
 			if (data[1].equals(logPass.getText())) {
 
+				GameApp game = new GameApp();
+				game.setData(logUser.getText());
+				Stage stage = new Stage();
+				game.start(stage);
 
-				FXMLLoader fxmlLoader = new FXMLLoader(JuegoApp.class.getResource("game.fxml"));
 
-				Scene scene = new Scene(fxmlLoader.load());
-				Stage newStage = new Stage();
-				newStage.setTitle("Mi lol");
-				newStage.setScene(scene);
-				newStage.show();
+//				FXMLLoader fxmlLoader = new FXMLLoader(JuegoApp.class.getResource("game.fxml"));
+//
+//				Scene scene = new Scene(fxmlLoader.load());
+//				Stage newStage = new Stage();
+//				newStage.setTitle("Mi lol");
+//				newStage.setScene(scene);
+//				newStage.show();
 
 				/*Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 				alert.setTitle("Ok");
@@ -125,7 +131,7 @@ public class LoginController {
             try {
                 signInUser();
 				System.out.println("Juego");
-            } catch (IOException ex) {
+            } catch (IOException | SQLException ex) {
 				System.out.println(ex.getMessage() + "moomom " );
                 throw new RuntimeException(ex);
             }

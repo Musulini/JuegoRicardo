@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/Login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.juegoricardo.LoginController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="stack_pane" stylesheets="@css/Login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.juegoricardo.controller.LoginController">
    <children>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -19,19 +19,19 @@
               <AnchorPane fx:id="signUpContainer" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="22.0" layoutY="22.0" prefHeight="17.0" prefWidth="47.0" text="nombre" />
-                        <TextField fx:id="materno" layoutX="106.0" layoutY="49.0" styleClass="singUpInput"/>
+                        <TextField fx:id="materno" layoutX="106.0" layoutY="49.0" styleClass="singUpInput" />
                         <Label layoutX="20.0" layoutY="84.0" prefHeight="17.0" prefWidth="71.0" text="apellido P" />
-                        <TextField fx:id="nombre" layoutX="106.0" layoutY="17.0" styleClass="singUpInput"/>
+                        <TextField fx:id="nombre" layoutX="106.0" layoutY="17.0" styleClass="singUpInput" />
                         <Label layoutX="20.0" layoutY="53.0" prefHeight="17.0" prefWidth="59.0" text="apellido M" />
-                        <TextField fx:id="paterno" layoutX="106.0" layoutY="80.0" styleClass="singUpInput"/>
-                        <PasswordField fx:id="pass" layoutX="106.0" layoutY="114.0" styleClass="singUpInput"/>
+                        <TextField fx:id="paterno" layoutX="106.0" layoutY="80.0" styleClass="singUpInput" />
+                        <PasswordField fx:id="pass" layoutX="106.0" layoutY="114.0" styleClass="singUpInput" />
                         <Label layoutX="20.0" layoutY="118.0" prefHeight="17.0" prefWidth="71.0" text="pass" />
-                        <PasswordField fx:id="confPass" layoutX="106.0" layoutY="154.0" styleClass="singUpInput"/>
+                        <PasswordField fx:id="confPass" layoutX="106.0" layoutY="154.0" styleClass="singUpInput" />
                         <Label layoutX="20.0" layoutY="158.0" prefHeight="17.0" prefWidth="71.0" text="confirm pass" />
                         <Label layoutX="300.0" layoutY="22.0" prefHeight="17.0" prefWidth="71.0" text="email" />
-                        <TextField fx:id="email" layoutX="386.0" layoutY="18.0" styleClass="singUpInput"/>
+                        <TextField fx:id="email" layoutX="386.0" layoutY="18.0" styleClass="singUpInput" />
                         <Label layoutX="292.0" layoutY="84.0" prefHeight="17.0" prefWidth="71.0" text="username" />
-                        <TextField fx:id="username" layoutX="378.0" layoutY="80.0" styleClass="singUpInput"/>
+                        <TextField fx:id="username" layoutX="378.0" layoutY="80.0" styleClass="singUpInput" />
                         <Button fx:id="signUpBtn" layoutX="319.0" layoutY="154.0" mnemonicParsing="false" text="submit" />
                      </children></AnchorPane>
             </content>
@@ -44,8 +44,8 @@
                         <Label layoutY="68.0" prefHeight="17.0" prefWidth="600.0" text="INPUT:  USUARIO + CONTRASEÑA " />
                         <Pane layoutY="130.0" prefHeight="51.0" prefWidth="600.0">
                            <children>
-                              <TextField fx:id="logUser" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" styleClass="signInInput"/>
-                              <PasswordField fx:id="logPass" layoutX="300.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" styleClass="signInInput"/>
+                              <TextField fx:id="logUser" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" styleClass="signInInput" />
+                              <PasswordField fx:id="logPass" layoutX="300.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" styleClass="signInInput" />
                            </children>
                         </Pane>
                         <Button fx:id="signInBtn" layoutX="70.0" layoutY="214.0" mnemonicParsing="false" text="lito" />

@@ -1,8 +1,12 @@
-package com.example.juegoricardo;
+package com.example.juegoricardo.controller;
 
+import com.example.juegoricardo.ConnectorDAO;
+import com.example.juegoricardo.JuegoApp;
+import com.example.juegoricardo.SQLConnection;
 import com.example.juegoricardo.model.User;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -10,8 +14,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Set;
 
 public class LoginController {
 	////////////////
@@ -76,15 +80,25 @@ public class LoginController {
 		}
 	}
 
-	private void signInUser() {
+	private void signInUser() throws IOException {
 		String[] data = connector.getLoggedUser(logUser.getText());
 		if (data[0] != null) {
 			if (data[1].equals(logPass.getText())) {
-				Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+
+
+				FXMLLoader fxmlLoader = new FXMLLoader(JuegoApp.class.getResource("game.fxml"));
+
+				Scene scene = new Scene(fxmlLoader.load());
+				Stage newStage = new Stage();
+				newStage.setTitle("Mi lol");
+				newStage.setScene(scene);
+				newStage.show();
+
+				/*Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 				alert.setTitle("Ok");
 				alert.setHeaderText(null);
 				alert.setContentText("Inicio de Sesión");
-				alert.showAndWait();
+				alert.showAndWait();*/
 			} else {
 				Alert alert = new Alert(Alert.AlertType.ERROR);
 				alert.setTitle("Error");
@@ -108,7 +122,13 @@ public class LoginController {
 			signUpUser();
 		});
 		signInBtn.setOnAction(e -> {
-			signInUser();
-		});
+            try {
+                signInUser();
+				System.out.println("Juego");
+            } catch (IOException ex) {
+				System.out.println(ex.getMessage() + "moomom " );
+                throw new RuntimeException(ex);
+            }
+        });
 	}
 }

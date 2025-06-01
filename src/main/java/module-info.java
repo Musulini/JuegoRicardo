@@ -13,4 +13,6 @@ module com.example.juegoricardo {
 
 	opens com.example.juegoricardo to javafx.fxml;
     exports com.example.juegoricardo;
+    exports com.example.juegoricardo.controller;
+    opens com.example.juegoricardo.controller to javafx.fxml;
 }

@@ -1,25 +1,70 @@
-.root {
-    /* COLORS: -------------------------------------------------------------------------------- */
-    -fx-violet-color: #191629;
-    -fx-cream-color: #ffe8c2;
-    -fx-orange-color: #ffb582;
-    -fx-white-color: #ffffff;
-    -fx-grey-color: #b7b7b7;
-
-    -fx-bg-gradient: linear-gradient(to bottom right, #000f1e, #000000);
-    /*-fx-background: #ca4e44;*/
-
-    /* FONTS: --------------------------------------------------------------------------------- */
-    /* : -------------------------------------------------------------------------------------- */
-}
-
 
 .stack_pane {
-    -fx-background-color: -fx-bg-gradient;
+    -fx-background-color: #1c2041;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
 }
 
-.singUpInput {
+.putotec {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+}
+.line {
+    -fx-background-color: #097dfe;
 }
 
-.signInInput {
+.text-field, .password-field {
+    -fx-prompt-text-fill: #777;
+    -fx-background-color: #050507;
+    -fx-text-fill: white;
+    -fx-border-color: #097dfe;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+
+    /* Simula el resplandor */
+    -fx-effect: dropshadow(gaussian, #3c93f5, 10, 0.5, 0, 0);
 }
+
+/* Cuando está enfocado */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #097dfe;
+    -fx-effect: dropshadow(gaussian, #097dfe, 15, 0.8, 0, 0);
+    -fx-background-color: #0b1cab;
+}
+
+.button {
+    -fx-background-color: #097dfe;
+    -fx-text-fill: white;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+
+    /* Efecto de sombra similar a los text fields */
+    -fx-effect: dropshadow(gaussian, #3c93f5, 10, 0.5, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: #0b6ed9;
+    -fx-effect: dropshadow(gaussian, #097dfe, 15, 0.8, 0, 0);
+}
+
+.button:pressed {
+    -fx-background-color: #0a5cb6;
+    -fx-effect: dropshadow(gaussian, #097dfe, 5, 0.3, 0, 0);
+    -fx-translate-y: 1px;
+}
+
+.button:focused {
+    -fx-effect: dropshadow(gaussian, #097dfe, 15, 0.8, 0, 0);
+}
+

@@ -2,7 +2,6 @@ package com.example.juegoricardo.controller;
 
 import com.example.juegoricardo.ConnectorDAO;
 import com.example.juegoricardo.GameApp;
-import com.example.juegoricardo.JuegoApp;
 import com.example.juegoricardo.SQLConnection;
 import com.example.juegoricardo.model.User;
 import javafx.fxml.FXML;

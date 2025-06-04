@@ -1,17 +1,4 @@
-.root {
-    /* COLORS: -------------------------------------------------------------------------------- */
-    -fx-violet-color: #191629;
-    -fx-cream-color: #ffe8c2;
-    -fx-orange-color: #ffb582;
-    -fx-white-color: #ffffff;
-    -fx-grey-color: #b7b7b7;
 
-    -fx-bg-gradient: linear-gradient(to bottom right, #000f1e, #000000);
-    /*-fx-background: #ca4e44;*/
-
-    /* FONTS: --------------------------------------------------------------------------------- */
-    /* : -------------------------------------------------------------------------------------- */
-}
 
 .scene {
     -fx-background-color: -fx-bg-gradient;

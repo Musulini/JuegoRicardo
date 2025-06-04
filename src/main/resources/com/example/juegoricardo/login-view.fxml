@@ -12,27 +12,38 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="stack_pane" stylesheets="@css/Login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.juegoricardo.controller.LoginController">
    <children>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/Tabs.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Registrar">
             <content>
               <AnchorPane fx:id="signUpContainer" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="22.0" layoutY="22.0" prefHeight="17.0" prefWidth="47.0" text="nombre" />
-                        <TextField fx:id="materno" layoutX="106.0" layoutY="49.0" styleClass="singUpInput" />
-                        <Label layoutX="20.0" layoutY="84.0" prefHeight="17.0" prefWidth="71.0" text="apellido P" />
-                        <TextField fx:id="nombre" layoutX="106.0" layoutY="17.0" styleClass="singUpInput" />
-                        <Label layoutX="20.0" layoutY="53.0" prefHeight="17.0" prefWidth="59.0" text="apellido M" />
-                        <TextField fx:id="paterno" layoutX="106.0" layoutY="80.0" styleClass="singUpInput" />
-                        <PasswordField fx:id="pass" layoutX="106.0" layoutY="114.0" styleClass="singUpInput" />
-                        <Label layoutX="20.0" layoutY="118.0" prefHeight="17.0" prefWidth="71.0" text="pass" />
-                        <PasswordField fx:id="confPass" layoutX="106.0" layoutY="154.0" styleClass="singUpInput" />
-                        <Label layoutX="20.0" layoutY="158.0" prefHeight="17.0" prefWidth="71.0" text="confirm pass" />
-                        <Label layoutX="300.0" layoutY="22.0" prefHeight="17.0" prefWidth="71.0" text="email" />
-                        <TextField fx:id="email" layoutX="386.0" layoutY="18.0" styleClass="singUpInput" />
-                        <Label layoutX="292.0" layoutY="84.0" prefHeight="17.0" prefWidth="71.0" text="username" />
-                        <TextField fx:id="username" layoutX="378.0" layoutY="80.0" styleClass="singUpInput" />
-                        <Button fx:id="signUpBtn" layoutX="319.0" layoutY="154.0" mnemonicParsing="false" text="submit" />
+                         <Label layoutX="17.0" layoutY="17.0" prefHeight="20.0" prefWidth="64.0" styleClass="putotec" text="NOMBRE:" />
+                         <TextField fx:id="nombre" layoutX="16.0" layoutY="43.0" prefHeight="37.0" prefWidth="160.0" promptText="Ej: Ricardo" />
+
+                         <Label layoutX="215.0" layoutY="17.0" prefHeight="20.0" prefWidth="87.0" styleClass="putotec" text="APELLIDO P:" />
+                         <TextField fx:id="paterno" layoutX="214.0" layoutY="38.0" promptText="Ej: Gómez" />
+
+                         <Label layoutX="347.0" layoutY="20.0" prefHeight="20.0" prefWidth="86.0" styleClass="putotec" text="APELLIDO M:" />
+                         <TextField fx:id="materno" layoutX="346.0" layoutY="39.0" promptText="Ej: Ramírez" />
+
+                         <Label layoutX="325.0" layoutY="144.0" prefHeight="17.0" prefWidth="71.0" styleClass="putotec" text="EMAIL:" />
+                         <TextField fx:id="email" layoutX="325.0" layoutY="165.0" prefHeight="37.0" prefWidth="246.0" promptText="Ej: ricardo@email.com" />
+
+                         <Label layoutX="326.0" layoutY="215.0" prefHeight="17.0" prefWidth="71.0" styleClass="putotec" text="USUARIO:" />
+                         <TextField fx:id="username" layoutX="327.0" layoutY="242.0" prefHeight="37.0" prefWidth="249.0" promptText="Elige un nombre único" />
+
+                         <Label layoutX="15.0" layoutY="144.0" prefHeight="17.0" prefWidth="71.0" styleClass="putotec" text="PASS:" />
+                         <PasswordField fx:id="pass" layoutX="15.0" layoutY="167.0" prefHeight="37.0" prefWidth="263.0" promptText="Crea una contraseña segura" />
+
+                         <Label layoutX="14.0" layoutY="217.0" prefHeight="17.0" prefWidth="113.0" styleClass="putotec" text="CONFIRMACIÓN:" />
+                         <PasswordField fx:id="confPass" layoutX="14.0" layoutY="241.0" prefHeight="37.0" prefWidth="262.0" promptText="Vuelve a escribir la contraseña" />
+
+                         <Button fx:id="signUpBtn" layoutX="484.0" layoutY="323.0" mnemonicParsing="false" text="REGISTRAR" />
+                         <Pane layoutX="9.0" layoutY="136.0" prefHeight="2.0" prefWidth="565.0" styleClass="line" />
+                        <Pane layoutX="130.0" layoutY="65.0" prefHeight="3.0" prefWidth="119.0" rotate="90.0" styleClass="line" />
+
+
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -40,15 +51,17 @@
             <content>
               <AnchorPane fx:id="signInContainer" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchorpane_start">
                      <children>
-                        <Label prefHeight="50.0" prefWidth="600.0" text="Richard's  Game" />
-                        <Label layoutY="68.0" prefHeight="17.0" prefWidth="600.0" text="INPUT:  USUARIO + CONTRASEÑA " />
-                        <Pane layoutY="130.0" prefHeight="51.0" prefWidth="600.0">
+                        <Label layoutX="10.0" layoutY="48.0" prefHeight="17.0" prefWidth="71.0" styleClass="putotec" text="USUARIO:" />
+                        <Label layoutY="68.0" prefHeight="17.0" prefWidth="600.0" styleClass="putotec" />
+                        <Pane layoutY="-1.0" prefHeight="374.0" prefWidth="600.0">
                            <children>
-                              <TextField fx:id="logUser" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" styleClass="signInInput" />
-                              <PasswordField fx:id="logPass" layoutX="300.0" layoutY="14.0" prefHeight="25.0" prefWidth="300.0" styleClass="signInInput" />
+                              <TextField fx:id="logUser" layoutX="7.0" layoutY="71.0" prefHeight="25.0" prefWidth="300.0" styleClass="signInInput" />
+                              <PasswordField fx:id="logPass" layoutX="8.0" layoutY="161.0" prefHeight="25.0" prefWidth="300.0" styleClass="signInInput" />
+                              <Button fx:id="signInBtn" layoutX="13.0" layoutY="302.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="577.0" text="JUGAR" />
+                              <Label layoutX="10.0" layoutY="-11.0" prefHeight="50.0" prefWidth="600.0" styleClass="putotec" text="Richard's  Game" />
                            </children>
                         </Pane>
-                        <Button fx:id="signInBtn" layoutX="70.0" layoutY="214.0" mnemonicParsing="false" text="lito" />
+                        <Label layoutX="9.0" layoutY="138.0" prefHeight="17.0" prefWidth="71.0" styleClass="putotec" text="PASS:" />
                      </children>
                   </AnchorPane>
             </content>

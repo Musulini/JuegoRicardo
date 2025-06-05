@@ -40,13 +40,13 @@ public class GameApp extends Application {
 
 
 	private boolean specialFigureShown = false;
-	private final String[] figureTypes = {"circle", "square", "triangle"};
+	private final String[] figureTypes = {"circulo", "cuadrado", "triangulo"};
 	private final Color[] colors = {
 			Color.RED, Color.GREEN, Color.BLUE, Color.PURPLE,
 			Color.ORANGE, Color.CYAN, Color.PINK, Color.BROWN
 	};
 
-	private String currentTargetType = "circle";
+	private String currentTargetType = "circulo";
 
 	public GameApp() throws SQLException {
 	}
@@ -120,8 +120,8 @@ public class GameApp extends Application {
 		} else {
 			type = figureTypes[random.nextInt(3)];
 			switch (type) {
-				case "circle" -> shape = new Circle(20, color);
-				case "square" -> shape = new Rectangle(40, 40);
+				case "circulo" -> shape = new Circle(20, color);
+				case "cuadrado" -> shape = new Rectangle(40, 40);
 				default -> {
 					Polygon triangle = new Polygon();
 					triangle.getPoints().addAll(

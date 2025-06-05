@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConnectorDAO {
 	private final Connection connector;
@@ -61,6 +63,34 @@ public class ConnectorDAO {
 		}
 		return -1;
 	}
+
+	public List<UserScore> getAllUserScores() {
+		List<UserScore> userScores = new ArrayList<>();
+
+		String query = """
+        SELECT u.username, MAX(s.score) AS max_score
+        FROM User u
+        JOIN highscore s ON u.idUser = s.idUser
+        GROUP BY u.username
+        ORDER BY max_score DESC
+    """;
+
+		try (PreparedStatement stmt = connector.prepareStatement(query);
+			 ResultSet rs = stmt.executeQuery()) {
+
+			while (rs.next()) {
+				String username = rs.getString("username");
+				int score = rs.getInt("max_score");
+				userScores.add(new UserScore(username, score));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return userScores;
+	}
+
 
 	public String[] getLoggedUser(String username) {
 		String query = "SELECT username, password FROM user WHERE username = ?";

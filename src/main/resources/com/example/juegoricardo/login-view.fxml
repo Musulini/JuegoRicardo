@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
+<?import javafx.scene.layout.VBox?>
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="stack_pane" stylesheets="@css/Login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.juegoricardo.controller.LoginController">
    <children>
       <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/Tabs.css" tabClosingPolicy="UNAVAILABLE">
@@ -71,8 +72,8 @@
                <content>
                   <AnchorPane fx:id="signInContainer1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="anchorpane_start">
                      <children>
-                        <ListView layoutY="34.0" prefHeight="339.0" prefWidth="600.0" />
-                        <Label alignment="CENTER" contentDisplay="TOP" layoutY="11.0" prefHeight="17.0" prefWidth="598.0" styleClass="putotec" text="MEJORES PUNTAJES" />
+                        <ListView fx:id="userContainer" layoutY="34.0" prefHeight="339.0" prefWidth="600.0" />
+                         <Label alignment="CENTER" contentDisplay="TOP" layoutY="11.0" prefHeight="17.0" prefWidth="598.0" styleClass="putotec" text="MEJORES PUNTAJES" />
                      </children>
                   </AnchorPane>
                </content>

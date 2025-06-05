@@ -3,19 +3,20 @@ package com.example.juegoricardo.controller;
 import com.example.juegoricardo.ConnectorDAO;
 import com.example.juegoricardo.GameApp;
 import com.example.juegoricardo.SQLConnection;
+import com.example.juegoricardo.UserScore;
 import com.example.juegoricardo.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class LoginController {
 	////////////////
@@ -60,6 +61,12 @@ public class LoginController {
 	TextField logUser;
 	@FXML
 	PasswordField logPass;
+
+	//////////////////////
+	////LISTA USUARIOS////
+	//////////////////////
+	@FXML
+	ListView<VBox> userContainer;
 
 	private void signUpUser() {
 		User user = null;
@@ -119,6 +126,27 @@ public class LoginController {
 			alert.showAndWait();
 		}
 	}
+	private void populateUserScores() {
+		List<UserScore> scores = connector.getAllUserScores();
+		userContainer.getItems().clear(); // Clear previous entries
+
+		for (UserScore userScore : scores) {
+			Label usernameLabel = new Label("Username: " + userScore.getUsername());
+			usernameLabel.setTextFill(Color.WHITE);
+			usernameLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
+
+			Label scoreLabel = new Label("Score: " + userScore.getScore());
+			scoreLabel.setTextFill(Color.LIGHTGRAY);
+			scoreLabel.setStyle("-fx-font-size: 13px;");
+
+			VBox vbox = new VBox(4); // Spacing between labels
+			vbox.getChildren().addAll(usernameLabel, scoreLabel);
+			vbox.setStyle("-fx-background-color: #2e2e2e; -fx-padding: 8px; -fx-background-radius: 6px;");
+
+			userContainer.getItems().add(vbox);
+		}
+	}
+
 
 	@FXML
 	public void initialize() throws SQLException {
@@ -135,5 +163,7 @@ public class LoginController {
                 throw new RuntimeException(ex);
             }
         });
+		populateUserScores();
 	}
+
 }
